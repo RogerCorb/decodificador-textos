@@ -3,11 +3,16 @@
 
 Este projeto foi desenvolvido  desenvolvido utilizando HTML5,CSS3,JAVASCRIPT lado Front-end, é um decodificador de
 textos , exercício proposto no curso ONE (Oracle Next Education) em parceria com a ALURA, afim de praticarmos os 
-conhecimentos que aprendemos na primeira eta do curso sobre programção HTML , CSS3  e JAVASCIPT.
+conhecimentos que aprendemos na primeira etapa do curso sobre programação HTML , CSS3  e JAVASCIPT. Aqui foi 
+bastante exercitado os conceitos de responsividade mobile first e também o intenso trabalh com DOM javascript
+foi gratificante participar da construção deste pequeno programa pois aprendi bastante sobre front-end na prática
+tenho certeza que com oss conhecimentos que tnho de backend - Javascript - Node agora aliados ao front-end estou
+me tornando um profissional cada vez mais completo a cada dia.
 
 ## Hospedagem / Deploy 
 
 Este projeto esta publicado aqui em Githubpages, e voce pode rodar o mesmo em seu desktop ou celular através do link 
+https://rogercorb.github.io/decodificador-textos/
 
 ## Relatar um problema 
 
@@ -26,7 +31,7 @@ www.linkedin.com/in/rogerio-corbo
 ## 💻 Telas do programa
 
 <div>
-  <img src="/assets/foto da pagina.PNG" width=250 alt="Pagina home" title="Foto da Pagina Web decodificador de textos" > 
+  <img src="/assets/foto da pagina.PNG" width=350 alt="Pagina home" title="Foto da Pagina Web decodificador de textos" > 
 </div>
 
 
