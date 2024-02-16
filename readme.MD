@@ -2,12 +2,12 @@
 # Pagina web Virtual-Personalitte
 
 Este projeto foi desenvolvido  desenvolvido utilizando HTML5,CSS3,JAVASCRIPT lado Front-end, é um decodificador de
-textos , exercício proposto no curso ONE (Oracle Next Education) em parceria com a ALURA, afim de praticarmos os co-
-nhecimentos que aprendemos na primeira eta do curso sobre programção HTML , CSS3  e JAVASCIPT.
+textos , exercício proposto no curso ONE (Oracle Next Education) em parceria com a ALURA, afim de praticarmos os 
+conhecimentos que aprendemos na primeira eta do curso sobre programção HTML , CSS3  e JAVASCIPT.
 
 ## Hospedagem / Deploy 
 
-Este projeto esta publicado aqui em GithubpagesPara e voce pode rodar o mesmo em seu desktop ou celular através do link 
+Este projeto esta publicado aqui em Githubpages, e voce pode rodar o mesmo em seu desktop ou celular através do link 
 
 ## Relatar um problema 
 
@@ -26,7 +26,7 @@ www.linkedin.com/in/rogerio-corbo
 ## 💻 Telas do programa
 
 <div>
-  <img src="/public/assets/foto da pagina.PNG" width=250 alt="Pagina home" title="Foto da Pagina Web decodificador de textos" > 
+  <img src="/assets/foto da pagina.PNG" width=250 alt="Pagina home" title="Foto da Pagina Web decodificador de textos" > 
 </div>
 
 
