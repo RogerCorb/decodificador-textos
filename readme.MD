@@ -1,5 +1,5 @@
 
-# Pagina web Virtual-Personalitte
+# Pagina web Decodificador de textos 
 
 Este projeto foi desenvolvido  desenvolvido utilizando HTML5,CSS3,JAVASCRIPT lado Front-end, é um decodificador de
 textos , exercício proposto no curso ONE (Oracle Next Education) em parceria com a ALURA, afim de praticarmos os 
