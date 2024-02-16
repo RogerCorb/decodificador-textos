@@ -122,7 +122,7 @@ function copiar() {
     };    
     paragrafoCaracteres.innerText = `Caracteres restantes.: ${quantidadeCaracteres-textoOriginal.length}`;
     textAreaCriptografada.value=' ';
-    textAreaCriptografada.style.display='none';
+    //textAreaCriptografada.style.display='none';
 
     alternaImagemTextArea(); 
     insereTituloSubtitulo();
