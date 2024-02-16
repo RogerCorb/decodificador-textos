@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Decodificador</title>
+        <script src="/js/app.js" defer></script>  
+        <link rel="stylesheet" href="/styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="header"></header>
+        <main class="apresentacao">
+            <img id="logotipo_alura" src="/assets/Frame 6.png" alt="logotipo alura">
+                       
+            <section class="apresentacao_criptografia">
+
+                <div class="apresentacao_digiteseutexto">                    
+                    <label class="apresentacao_paragrafo" for="textoOriginal">Digite seu texto</label>
+                    <textarea id="textoOriginal" cols="1" rows="8" maxlength="290"></textarea>
+                </div>
+              
+              
+
+               <div class="apresentacao_criptografia_mensagem">
+                  <img id="alerta" src="/assets/bi_exclamation-circle-fill.png" alt="figura exclamação">
+                  <p id="paragrafo_caracteres">Apenas letras minúsculas e sem acento. </p>
+                  <p id="paragrafo_erro"> </p>
+               </div>
+               
+               <div class="apresentacao_criptografia_botoes">
+                  <button id="buttonCriptografa"  type="button" onclick="criptografar()">Criptografar</button>
+                  <button id="buttonDescriptogra" type="button" onclick="descriptografa()" disabled>Descriptografar</button>
+               </div>               
+            </section>
+
+            <section class="apresentacao_descriptografia">              
+                
+                <div class="apresentacao_descriptografia_imagemtexto">
+                    <img id="imagem_detetive" src="/assets/High quality products 1 1.png" alt="menino detetive">
+                    <textarea  id="textoCriptografado" cols="1" rows="6" maxlength="350" placeholder=" "></textarea>
+                </div>
+
+                <div class="apresentacao_descriptografia_textoinformativo">
+                    <p id="titulo_textoinformativo">Nenhuma mensagem encontrada</p>
+                    <p id="subtitulo_textoinformativo">Digite um texto que você deseja criptografar ou descriptografar.</p>
+                </div>
+
+                <div class="apresentacao_descriptografia_botoes">
+                    <button id="buttonCopia" type="button" onclick="copiar()" disabled>Copiar</button>
+                </div>               
+            
+            </section>     
+            
+        </main>  
+        <footer class="footer">
+            Dev FullStack Rogerio Corbo
+        </footer>  
+    </body> 
+</html>

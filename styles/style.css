@@ -1,0 +1,390 @@
+:root { 
+   --primary-color : #F6F6F6;
+   --secondary-color : #22d4fd;
+   --terciary-color : black; 
+   --color-hover : #82dff7; 
+
+   --font-familione : "Krona One", sans-serif; 
+}
+
+.inter-uniquifier {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
+* { 
+margin: 0;
+padding: 0; 
+box-sizing: border-box; 
+}
+
+html, body {  
+   height: 100%; 
+   width: 100%; 
+   margin:0;    
+   padding:0;
+   display: flex;
+   flex-direction: column;           
+   background-color:var(--primary-color) ;
+   color: var(--terciary-color);
+}
+
+.header{
+   margin:0.5rem;
+   padding: 0.3rem;
+}
+
+#logotipo_alura {
+   width:120px;
+   height:48px;
+   margin:0.1rem;     
+}
+
+.apresentacao{
+   height: 100%;
+   width: 100%;
+   display:flex;
+   gap:1.8rem;
+}
+
+textarea {
+   resize: none;
+   border: none;
+   text-decoration: none;
+}
+
+.apresentacao_criptografia { 
+   width: 680px;    
+   margin-left:4rem;
+   margin-right: 1rem;
+   display:flex;  
+   flex-direction: column;
+}
+
+.apresentacao_digiteseutexto { 
+   margin-top: 4rem;
+   display: flex; 
+   flex-direction: column;  
+   width: 100%;
+   height: 80%;
+}
+
+.apresentacao_paragrafo{  
+   font-family:"Inter", sans-serif;
+   font-size: 2rem;
+   color: black;
+}
+
+#textoOriginal { 
+   font-family:"Inter", sans-serif;
+   height:auto;
+   font-size: 2rem;
+   border: none;
+   color: #0A3871;
+   width:auto;
+   align-items: center;
+}
+
+.apresentacao_criptografia_mensagem{
+   display:flex;
+   height: auto;  
+   gap:0.3rem;  
+}
+
+.apresentacao_criptografia_botoes{   
+   display:flex;
+   justify-content: center;
+   height: auto;
+   margin-top: 1rem;     
+   gap:8px;
+}
+
+#buttonCriptografa,#buttonDescriptogra,#buttonCopia{
+   width: 328px;
+   height: 67px;
+   padding:1.5rem;
+   border:none;
+   font-family:"Inter", sans-serif;
+   font-size: 1rem;   
+   border-radius: 24px;
+   cursor: pointer;
+   color: rgb(245, 245, 245);
+   background-color: #00008b;   
+}
+
+#buttonCriptografa:hover,#buttonCopia:hover,#buttonDescriptogra:hover{
+   background-color: #add8e6 ;
+   color:#00008b;  
+}
+
+#buttonDescriptogra:disabled,#buttonCopia:disabled{
+   background-color: #dddddd;
+   color:#00008b;
+   border:solid 0.1rem;
+   border-color: #00008b;
+   cursor:pointer;
+
+}
+
+.apresentacao_descriptografia { 
+   display:flex;
+   width: 400px;   
+   height: auto;
+   position:relative;    
+   flex-direction: column; 
+   gap:0.5rem;  
+}
+
+#imagem_detetive,#textoCriptografado { 
+   width: 100%;
+   height: 65%;
+   position: absolute; 
+}
+
+#textoCriptografado {
+   display:none; /* Inicialmente, a textarea está oculta */
+}
+
+#imagem_detetive { 
+   display:block; /* inicialmente, a imagem está visível */
+}
+
+.apresentacao_descriptografia_imagemtexto{
+   display:flex;
+   height: 66%;
+   margin:0.1rem;
+   padding:0.2rem;
+   gap:1rem;
+}
+
+.apresentacao_descriptografia_textoinformativo{
+   display:flex;
+   width: auto;   
+   flex-direction: column;
+   justify-content: center;    
+   height: 25%;
+   gap:0.5rem;
+}
+
+#titulo_textoinformativo{
+   font-family: "Inter", sans-serif;
+   font-size: 1.5rem;
+   font-weight: bold;
+   text-align: center;
+}
+
+#texto_criptografado{
+   font-family: "Inter", sans-serif;
+   font-size: 1.5rem;
+   font-weight: 400;
+   color:#495057;
+   text-align: center;
+}
+
+#subtitulo_textoinformativo{
+   font-family: "Inter", sans-serif;
+   font-size: 1rem;
+   text-align: center;
+}
+
+.apresentacao_descriptografia_botoes {    
+   display:flex;
+   width: 100%;   
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 1rem;   
+   height: auto;   
+}
+
+.footer {
+   width: auto;
+   display:flex;   
+   justify-content: center;
+   align-items: center;
+   margin:0.5rem;
+   padding: 1rem;
+}
+/********************************* RESPONSIVIDADE TABLETS**********************************************/
+
+@media screen and (max-width: 1024px) {   /* 1024px para baixo estas regras */
+   
+   body {   
+      max-width: 100vh; 
+      max-height: 100%;  
+      margin:0;
+      padding:0; 
+      box-sizing: border-box;          
+   }
+
+   .header{
+      margin:0.2rem;
+      padding: 0.2rem;
+   }
+
+   #logotipo_alura {     
+      margin:0;
+      width:50px;
+      height:31px;     
+   }
+
+   .apresentacao{
+      height: auto;
+      width: auto;
+      flex-direction: column;
+      justify-content: center; 
+      gap:1.5rem;
+   } 
+
+   .apresentacao_digiteseutexto { 
+      margin-top: 0.5rem;       
+      width: auto;
+      height: auto;
+   }
+   
+   .apresentacao_paragrafo{
+      max-width: 100%;
+      height: auto;
+   }
+
+   .apresentacao_criptografia { 
+      width: auto; 
+      height: auto;   
+      margin-left:0;
+      margin-right: 0;      
+   }   
+   
+   .apresentacao_criptografia_botoes{   
+      width:auto; 
+      height: auto;     
+   }
+  
+   .apresentacao_descriptografia {  
+      flex-direction: column; 
+      justify-content: center;  
+      align-items: center;       
+      width: auto;   
+      height: auto;       
+   }   
+
+   #textoCriptografado {
+      display:block; 
+      position: absolute;
+      border:none;
+      height: 20%;
+   }
+
+   #imagem_detetive { 
+      display:none; 
+   }
+
+   .apresentacao_descriptografia_imagemtexto{
+      width:auto;
+      height:23%;      
+   }
+
+   .apresentacao_descriptografia_textoinformativo{
+      width: auto;
+      height:auto;
+   }
+
+   .apresentacao_descriptografia_botoes {          
+      width: auto; 
+      height: 28%;        
+   }   
+}
+
+/********************************** CELULARES SMARTPHONES - IPHONES***************/   
+@media screen and (max-width: 448px) {   /* 448px pra baixo estas regras */
+
+   .header{      
+      padding:0.1rem;      
+   }
+
+   .body{
+      max-width: 100vh;
+      margin:0.5rem;
+   }
+   
+   .apresentacao {       
+      gap:0.1rem;  
+   }
+
+   .apresentacao_digiteseutexto { 
+      margin-top: 0.5rem;       
+      width: 90%;
+      height: auto;
+      justify-content: center;
+      align-self: center;
+   }
+
+   #buttonCriptografa,#buttonDescriptogra,#buttonCopia{
+      width: 90%;
+      height: auto; 
+      padding: auto;      
+   }
+
+   .apresentacao_criptografia_mensagem {
+      width: 90%;      
+      align-items: center;
+      margin-left:1.1rem;
+   }
+   
+
+   .apresentacao_criptografia_botoes{   
+      width:100%;      
+      flex-direction: column; 
+      justify-content: center;
+      align-items: center;     
+   }
+
+   #textoCriptografado { 
+      display:none;     
+      height: auto;
+   }
+   
+   .apresentacao_descriptografia_imagemtexto{
+      width:95%;
+      height:80px;
+      position: relative;      
+   }
+
+   .apresentacao_descriptografia_textoinformativo{
+      width: 100%;
+      height:auto;
+   }
+
+   .apresentacao_descriptografia_botoes {          
+      width: 100%; 
+      height: auto; 
+      justify-content: center;
+      margin-top:0.4rem;       
+   } 
+   
+   .footer {           
+      padding:0.2rem;      
+   }
+   
+    
+}
+
+/********************************** CELULARES MENORES SMARTPHONES-IPHONES ******************/  
+@media screen and (max-width: 376px) {   /* 376px pra baixo estas regras */
+
+   .header{      
+      padding:0.1rem;      
+   }
+
+   .body{
+      max-width: 100vh;
+      box-sizing: border-box;
+   }
+   
+   .apresentacao {       
+      gap:0.1rem;  
+   }
+}
