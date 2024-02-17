@@ -42,16 +42,21 @@ textAreaOriginal.addEventListener('input',(event)=>{  //evento ouve o que esta s
 
 function verificaTexto() { 
     const textoDigitado = textAreaOriginal.value;
+
+    const caracteresEspeciais = /[.,:;?%&*()$#@!]/g;    
     const numeros = /[0-9]/gi;
     const maiusculas = /[A-Z]/g;
     const acentos = /[áàâãéèêíïóôõöúçñ]/gi;
     const respostaNumeros = textoDigitado.match(numeros);  
     const respostaMaiusculas = textoDigitado.match(maiusculas);
-    const respostaAcentos = textoDigitado.match(acentos);     
+    const respostaAcentos = textoDigitado.match(acentos);
+    const resposta = textoDigitado.match(caracteresEspeciais);
+       
 
-    if (respostaNumeros || respostaMaiusculas || respostaAcentos) {                
+    if (respostaNumeros || respostaMaiusculas || respostaAcentos || resposta) {                
         let escolhido = respostaNumeros ? 'numeros': 'acentos';        
-        escolhido = respostaMaiusculas ? 'maiusculas': escolhido; 
+        escolhido = respostaMaiusculas ? 'maiusculas': escolhido;
+        if (resposta) escolhido = 'Caracteres'; 
         let mensagemRetorno = `Criptografia não realizada, ${escolhido} não são aceitos.`; 
         const element = document.getElementById('paragrafo_erro');
 
