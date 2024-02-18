@@ -321,6 +321,10 @@ textarea:focus, input:focus, select:focus {
       gap:0.1rem;  
    }
 
+   .apresentacao_paragrafo{
+      display:none;
+   }
+
    .apresentacao_digiteseutexto { 
       margin-top: 0.5rem;       
       width: 90%;

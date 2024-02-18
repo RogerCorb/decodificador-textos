@@ -17,15 +17,16 @@ let tamanhoArea = Number(textAreaOriginal.getAttribute('maxlength'));
 const quantidadeCaracteres=tamanhoArea;
 
 window.addEventListener('load', () => {    
-    const larguraTela = window.innerWidth;     
+    const larguraTela = window.innerWidth;   
+    
     localStorage.setItem(chaveTela, larguraTela); 
     return;      
 });
 
+const tamanhoTela=localStorage.getItem(chaveTela);
+controlaPlaceholder(); 
 
-textAreaOriginal.addEventListener('input',(event)=>{ 
-
-    textAreaOriginal.style.border='none';
+textAreaOriginal.addEventListener('input',(event)=>{     
     
     if (event.inputType==='deleteContentBackward' || event.inputType==='insertFromPaste') {
         const textAreaOriginal = document.getElementById('textoOriginal').value;
@@ -135,25 +136,12 @@ function copiar() {
     insereTituloSubtitulo();
 }
 
-function limpar() {        
-    textAreaOriginal.value=' ';
-    textAreaCriptografada.value=' ';  
-    clearMsgErro();
-    paragrafoCaracteres.innerHTML='Apenas letras minúsculas e sem acento.';
-    insereTituloSubtitulo();  
-    onButtons();    
-    tamanhoArea=quantidadeCaracteres;
-    alternaImagemTextArea();
-}
-
 function clearMsgErro() {
     let paragrafoErroMsg = document.getElementById('paragrafo_erro');
     paragrafoErroMsg.innerHTML=' '; // limpa a mensagem de erro do parágrafo <p></p>
 }
 
 function alternaImagemTextArea() {
-    
-    const tamanhoTela=localStorage.getItem(chaveTela);    
 
     if (tamanhoTela > 1024) {
         if (imagemDetetive.style.display==='none') {
@@ -161,6 +149,16 @@ function alternaImagemTextArea() {
             textAreaCriptografada.style.display = 'none';        
         }       
     } 
+    controlaPlaceholder();  
+}
+
+
+function controlaPlaceholder() { 
+    if (tamanhoTela < 490) {
+        textAreaOriginal.setAttribute('placeholder','Digite seu texto');    
+    } else { 
+        textAreaOriginal.removeAttribute('placeholder',true);
+    }
 }
 
 function onButtons() { 
