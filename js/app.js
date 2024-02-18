@@ -24,23 +24,29 @@ window.addEventListener('load', () => {
 });
 
 const tamanhoTela=localStorage.getItem(chaveTela);
-controlaPlaceholder(); 
+controlaPlaceholder(tamanhoTela); 
 
-textAreaOriginal.addEventListener('input',(event)=>{     
+textAreaOriginal.addEventListener('input',(event)=>{ 
     
-    if (event.inputType==='deleteContentBackward' || event.inputType==='insertFromPaste') {
-        const textAreaOriginal = document.getElementById('textoOriginal').value;
-        tamanhoArea=quantidadeCaracteres-textAreaOriginal.length-1; 
-    }    
-    tamanhoArea > 0 && event.inputType === 'insertText' ?  tamanhoArea-- : tamanhoArea++;    
-    paragrafoCaracteres.innerText = `Caracteres restantes.: ${tamanhoArea}`;     
-    
-    clearMsgErro();
-    alternaImagemTextArea();
+    if (tamanhoTela > 1024) {        
+        
+        if (event.inputType==='deleteContentBackward' || event.inputType==='insertFromPaste') {
+            const textAreaOriginal = document.getElementById('textoOriginal').value;
+            tamanhoArea=quantidadeCaracteres-textAreaOriginal.length-1; 
+        }    
+        tamanhoArea > 0 && event.inputType === 'insertText' ?  tamanhoArea-- : tamanhoArea++;    
+        paragrafoCaracteres.innerText = `Caracteres restantes.: ${tamanhoArea}`;     
+        
+        clearMsgErro();
+        alternaImagemTextArea();
 
-    if (event.inputType!=='insertFromPaste') offButons(); 
+        if (event.inputType!=='insertFromPaste') offButons(); 
+        
+        insereTituloSubtitulo();
+    } else { 
+        // desenvolver a parte mobile para contagem de caracteres
+    }
     
-    insereTituloSubtitulo();
 });
 
 function verificaTexto() { 
@@ -149,11 +155,11 @@ function alternaImagemTextArea() {
             textAreaCriptografada.style.display = 'none';        
         }       
     } 
-    controlaPlaceholder();  
+    controlaPlaceholder(tamanhoTela);  
 }
 
 
-function controlaPlaceholder() { 
+function controlaPlaceholder(tamanhoTela) { 
     if (tamanhoTela < 490) {
         textAreaOriginal.setAttribute('placeholder','Digite seu texto');    
     } else { 
