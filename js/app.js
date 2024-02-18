@@ -12,19 +12,21 @@ textAreaCriptografada.disabled = true;  //Desabilitei a entrada de teclado na te
 offButons();
 const textAreaOriginal = document.getElementById('textoOriginal');
 
+
 let tamanhoArea = Number(textAreaOriginal.getAttribute('maxlength'));
 const quantidadeCaracteres=tamanhoArea;
 
-window.addEventListener('load', () => {     //pega o tamanho da tela na chamda index.html 
+window.addEventListener('load', () => {    
     const larguraTela = window.innerWidth;     
     localStorage.setItem(chaveTela, larguraTela); 
-    return      
+    return;      
 });
 
 
-textAreaOriginal.addEventListener('input',(event)=>{  //evento ouve o que esta sendo digitado
-    
+textAreaOriginal.addEventListener('input',(event)=>{ 
 
+    textAreaOriginal.style.border='none';
+    
     if (event.inputType==='deleteContentBackward' || event.inputType==='insertFromPaste') {
         const textAreaOriginal = document.getElementById('textoOriginal').value;
         tamanhoArea=quantidadeCaracteres-textAreaOriginal.length-1; 
@@ -50,14 +52,14 @@ function verificaTexto() {
     const respostaNumeros = textoDigitado.match(numeros);  
     const respostaMaiusculas = textoDigitado.match(maiusculas);
     const respostaAcentos = textoDigitado.match(acentos);
-    const resposta = textoDigitado.match(caracteresEspeciais);
+    const respostaCaracteresEspeciais = textoDigitado.match(caracteresEspeciais);
        
 
-    if (respostaNumeros || respostaMaiusculas || respostaAcentos || resposta) {                
+    if (respostaNumeros || respostaMaiusculas || respostaAcentos || respostaCaracteresEspeciais) {                
         let escolhido = respostaNumeros ? 'numeros': 'acentos';        
-        escolhido = respostaMaiusculas ? 'maiusculas': escolhido;
-        if (resposta) escolhido = 'Caracteres'; 
-        let mensagemRetorno = `Criptografia não realizada, ${escolhido} não são aceitos.`; 
+        escolhido = respostaMaiusculas ? 'maiusculas': escolhido;        
+        if (respostaCaracteresEspeciais) escolhido = 'caracteres especiais'; 
+        let mensagemRetorno = `Criptografia não realizada, ${escolhido} não aceitos.`; 
         const element = document.getElementById('paragrafo_erro');
 
         element.innerHTML=mensagemRetorno;  //muda  a mensagem no paragrafo <p></p>
@@ -106,8 +108,8 @@ function descriptografa() {
 
 function copiar() { 
     const textoCriptografado = textAreaCriptografada.value; 
-    const textoOriginal = textAreaOriginal.value;      
-
+    const textoOriginal = textAreaOriginal.value; 
+         
     if(navigator.clipboard.writeText(textoCriptografado)){
         
         if (textoCriptografado.length > 1) {
@@ -153,7 +155,7 @@ function alternaImagemTextArea() {
     
     const tamanhoTela=localStorage.getItem(chaveTela);    
 
-    if (tamanhoTela > 1000) {
+    if (tamanhoTela > 1024) {
         if (imagemDetetive.style.display==='none') {
             imagemDetetive.style.display='block'; 
             textAreaCriptografada.style.display = 'none';        
