@@ -35,18 +35,15 @@ textAreaOriginal.addEventListener('input',(event)=>{
             tamanhoArea=quantidadeCaracteres-textAreaOriginal.length-1; 
         }    
         tamanhoArea > 0 && event.inputType === 'insertText' ?  tamanhoArea-- : tamanhoArea++;    
-        paragrafoCaracteres.innerText = `Caracteres restantes.: ${tamanhoArea}`;     
-        
-        clearMsgErro();
-        alternaImagemTextArea();
-
+        paragrafoCaracteres.innerText = `Caracteres restantes.: ${tamanhoArea}`;             
         if (event.inputType!=='insertFromPaste') offButons(); 
         
-        insereTituloSubtitulo();
     } else { 
         // desenvolver a parte mobile para contagem de caracteres
     }
-    
+    clearMsgErro();
+    alternaImagemTextArea();
+    insereTituloSubtitulo();    
 });
 
 function verificaTexto() { 
@@ -133,8 +130,11 @@ function copiar() {
         } else {
             alert('conteudo vazio cópia não realizada');
         }        
-    };    
-    paragrafoCaracteres.innerText = `Caracteres restantes.: ${quantidadeCaracteres-textoOriginal.length}`;
+    }; 
+    if (tamanhoTela > 1024) {
+        paragrafoCaracteres.innerText = `Caracteres restantes.: ${quantidadeCaracteres-textoOriginal.length}`;        
+    }   
+    
     textAreaCriptografada.value=' ';
     //textAreaCriptografada.style.display='none';
 
