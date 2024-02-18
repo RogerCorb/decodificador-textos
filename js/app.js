@@ -162,9 +162,7 @@ function alternaImagemTextArea() {
 function controlaPlaceholder(tamanhoTela) { 
     if (tamanhoTela < 490) {
         textAreaOriginal.setAttribute('placeholder','Digite seu texto');    
-    } else { 
-        textAreaOriginal.removeAttribute('placeholder',true);
-    }
+    } 
 }
 
 function onButtons() { 

@@ -365,8 +365,8 @@ textarea:focus, input:focus, select:focus {
    }
 
    .apresentacao_descriptografia_textoinformativo{
-      width: 100%;
-      height:auto;
+      width: 95%;      
+      align-items: center;
    }
 
    .apresentacao_descriptografia_botoes {          
