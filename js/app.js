@@ -71,7 +71,7 @@ function verificaTexto() {
         return;        
 
     } else { 
-        if (textoDigitado) {
+        if (textoDigitado!==' ') {
             imagemDetetive.style.display='none';
             textAreaCriptografada.style.display='block';            
         }
@@ -83,7 +83,11 @@ function verificaTexto() {
 function criptografar() {
     const textoDigitado = verificaTexto();
 
-    if (!textoDigitado) return;        
+    console.log(textoDigitado);
+
+    if (!textoDigitado || textoDigitado===' ') { 
+        return;        
+    } 
     onButtons();
     let textoCriptografado =textoDigitado.replaceAll('e','enter');    
     textoCriptografado=textoCriptografado.replaceAll('i','imes');
