@@ -124,6 +124,8 @@ textarea:focus, input:focus, select:focus {
    color:#00008b;  
 }
 
+
+
 #buttonDescriptogra:disabled,#buttonCopia:disabled{
    background-color: #dddddd;
    color:#00008b;

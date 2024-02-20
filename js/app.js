@@ -5,6 +5,7 @@ const paragrafoCaracteres = document.getElementById('paragrafo_caracteres');
 const imagemDetetive = document.getElementById('imagem_detetive');
 const paragrafoTituloTextoInformativo = document.getElementById('titulo_textoinformativo');
 const paragrafoSsubtituloTextoInformativo = document.getElementById('subtitulo_textoinformativo');
+const estilosOriginais = window.getComputedStyle(buttonCopiar);
 
 const chaveTela = ('item2');
 
@@ -26,7 +27,7 @@ window.addEventListener('load', () => {
 const tamanhoTela=localStorage.getItem(chaveTela);
 controlaPlaceholder(tamanhoTela); 
 
-textAreaOriginal.addEventListener('input',(event)=>{ 
+textAreaOriginal.addEventListener('input',(event)=>{        
     
     if (tamanhoTela > 1024) {        
         
@@ -116,30 +117,31 @@ function copiar() {
          
     if(navigator.clipboard.writeText(textoCriptografado)){
         
+        
         if (textoCriptografado.length > 1) {
             buttonCopiar.innerText='copiado para área de transferência';
             buttonCopiar.setAttribute('disabled',true);
             buttonCopiar.style.backgroundColor='red';
             buttonCopiar.style.color='rgb(245, 245, 245)';
-            setInterval(() => {
+
+            setInterval(() => {                
                 buttonCopiar.removeAttribute('disabled');
-                buttonCopiar.style.backgroundColor='#00008b';
-                buttonCopiar.style.Color='rgb(245, 245, 245)';
-                buttonCopiar.innerText='Copiar';                
-            }, 4000);                       
+                buttonCopiar.innerText='Copiar';
+                estilosOriginaisButtonCopiar();
+            }, 4500);                       
         } else {
             alert('conteudo vazio cópia não realizada');
-        }        
+        }       
     }; 
     if (tamanhoTela > 1024) {
         paragrafoCaracteres.innerText = `Caracteres restantes.: ${quantidadeCaracteres-textoOriginal.length}`;        
-    }   
-    
+    }      
+
     textAreaCriptografada.value=' ';
     //textAreaCriptografada.style.display='none';
 
     alternaImagemTextArea(); 
-    insereTituloSubtitulo();
+    insereTituloSubtitulo();    
 }
 
 function clearMsgErro() {
@@ -178,4 +180,10 @@ function offButons() {
 function insereTituloSubtitulo() {
     paragrafoTituloTextoInformativo.innerHTML='Nenhuma mensagem encontrada ';
     paragrafoSsubtituloTextoInformativo.innerHTML='Digite um texto que você deseja criptografar ou descriptografar. ';    
+}
+
+function estilosOriginaisButtonCopiar() {
+    for (const propriedade in estilosOriginais) {
+      buttonCopiar.style[propriedade] = estilosOriginais[propriedade];
+    }
 }
