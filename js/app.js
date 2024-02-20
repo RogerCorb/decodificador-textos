@@ -57,8 +57,9 @@ function verificaTexto() {
     const respostaNumeros = textoDigitado.match(numeros);  
     const respostaMaiusculas = textoDigitado.match(maiusculas);
     const respostaAcentos = textoDigitado.match(acentos);
-    const respostaCaracteresEspeciais = textoDigitado.match(caracteresEspeciais);
-       
+    const respostaCaracteresEspeciais = textoDigitado.match(caracteresEspeciais); 
+
+    if (textoDigitado.trim()==='') return;
 
     if (respostaNumeros || respostaMaiusculas || respostaAcentos || respostaCaracteresEspeciais) {                
         let escolhido = respostaNumeros ? 'numeros': 'acentos';        
@@ -71,23 +72,19 @@ function verificaTexto() {
         return;        
 
     } else { 
-        if (textoDigitado!==' ') {
-            imagemDetetive.style.display='none';
-            textAreaCriptografada.style.display='block';            
-        }
+       
+        imagemDetetive.style.display='none';
+        textAreaCriptografada.style.display='block';                  
         
         return textoDigitado;
     }    
 }
 
 function criptografar() {
-    const textoDigitado = verificaTexto();
 
-    console.log(textoDigitado);
+    const textoDigitado = verificaTexto();    
+    if (!textoDigitado) return;
 
-    if (!textoDigitado || textoDigitado===' ') { 
-        return;        
-    } 
     onButtons();
     let textoCriptografado =textoDigitado.replaceAll('e','enter');    
     textoCriptografado=textoCriptografado.replaceAll('i','imes');
@@ -102,9 +99,10 @@ function criptografar() {
 
 function descriptografa() {
 
-    const textoDigitado = verificaTexto();    
-
-    let textoDesCriptografado=textoDigitado.replaceAll('enter','e');       
+    const textoZonaCriptografada = verificaTexto(); 
+    
+    onButtons();
+    let textoDesCriptografado=textoZonaCriptografada.replaceAll('enter','e');       
     textoDesCriptografado=textoDesCriptografado.replaceAll('imes','i');    
     textoDesCriptografado=textoDesCriptografado.replaceAll('ober','o');    
     textoDesCriptografado=textoDesCriptografado.replaceAll('ufat','u');    
@@ -141,11 +139,11 @@ function copiar() {
     }      
 
     textAreaCriptografada.value=' ';
-    //textAreaCriptografada.style.display='none';
+    textAreaCriptografada.style.display='none';
 
     alternaImagemTextArea(); 
     insereTituloSubtitulo(); 
-    offButons();   
+    //offButons();   
 }
 
 function clearMsgErro() {
