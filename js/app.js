@@ -124,8 +124,7 @@ function copiar() {
             buttonCopiar.style.backgroundColor='red';
             buttonCopiar.style.color='rgb(245, 245, 245)';
 
-            setInterval(() => {                
-                buttonCopiar.removeAttribute('disabled');
+            setInterval(() => {  
                 buttonCopiar.innerText='Copiar';
                 estilosOriginaisButtonCopiar();
             }, 4500);                       
@@ -141,7 +140,8 @@ function copiar() {
     //textAreaCriptografada.style.display='none';
 
     alternaImagemTextArea(); 
-    insereTituloSubtitulo();    
+    insereTituloSubtitulo(); 
+    offButons();   
 }
 
 function clearMsgErro() {
