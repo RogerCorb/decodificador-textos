@@ -83,7 +83,10 @@ function verificaTexto() {
 function criptografar() {
 
     const textoDigitado = verificaTexto();    
-    if (!textoDigitado) return;
+    if (!textoDigitado) {
+        offButons();
+        return
+    } 
 
     onButtons();
     let textoCriptografado =textoDigitado.replaceAll('e','enter');    
@@ -100,6 +103,10 @@ function criptografar() {
 function descriptografa() {
 
     const textoZonaCriptografada = verificaTexto(); 
+    if (!textoZonaCriptografada){
+        offButons();
+        return
+    } 
     
     onButtons();
     let textoDesCriptografado=textoZonaCriptografada.replaceAll('enter','e');       
