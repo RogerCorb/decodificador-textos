@@ -27,21 +27,23 @@ window.addEventListener('load', () => {
 const tamanhoTela=localStorage.getItem(chaveTela);
 controlaPlaceholder(tamanhoTela); 
 
-textAreaOriginal.addEventListener('input',(event)=>{        
-    
-    if (tamanhoTela > 1024) {        
+textAreaOriginal.addEventListener('input',(event)=>{  
         
-        if (event.inputType==='deleteContentBackward' || event.inputType==='insertFromPaste') {
+    if (event.inputType==='deleteContentBackward' || event.inputType==='insertFromPaste') {
             const textAreaOriginal = document.getElementById('textoOriginal').value;
             tamanhoArea=quantidadeCaracteres-textAreaOriginal.length-1; 
-        }    
-        tamanhoArea > 0 && event.inputType === 'insertText' ?  tamanhoArea-- : tamanhoArea++;    
-        paragrafoCaracteres.innerText = `Caracteres restantes.: ${tamanhoArea}`;             
-        if (event.inputType!=='insertFromPaste') offButons(); 
-        
-    } else { 
-        // desenvolver a parte mobile para contagem de caracteres
-    }
+    }    
+    tamanhoArea > 0 && event.inputType === 'insertText' ?  tamanhoArea-- : tamanhoArea++;     
+    if (tamanhoTela > 1024) {         
+        console.log(tamanhoArea);
+        if (tamanhoArea < 290) {
+           paragrafoCaracteres.innerText = `Caracteres restantes.: ${tamanhoArea}`;
+        } else { 
+           paragrafoCaracteres.innerText = `Apenas letras minúsculas e sem acento.`;
+        }
+    }             
+    if (event.inputType!=='insertFromPaste') offButons(); 
+   
     clearMsgErro();
     alternaImagemTextArea();
     insereTituloSubtitulo();    
@@ -158,7 +160,7 @@ function clearMsgErro() {
     paragrafoErroMsg.innerHTML=' '; // limpa a mensagem de erro do parágrafo <p></p>
 }
 
-function alternaImagemTextArea() {
+function alternaImagemTextArea() {    
 
     if (tamanhoTela > 1024) {
         if (imagemDetetive.style.display==='none') {
