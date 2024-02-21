@@ -13,7 +13,6 @@ textAreaCriptografada.disabled = true;  //Desabilitei a entrada de teclado na te
 offButons();
 const textAreaOriginal = document.getElementById('textoOriginal');
 
-
 let tamanhoArea = Number(textAreaOriginal.getAttribute('maxlength'));
 const quantidadeCaracteres=tamanhoArea;
 
@@ -34,8 +33,7 @@ textAreaOriginal.addEventListener('input',(event)=>{
             tamanhoArea=quantidadeCaracteres-textAreaOriginal.length-1; 
     }    
     tamanhoArea > 0 && event.inputType === 'insertText' ?  tamanhoArea-- : tamanhoArea++;     
-    if (tamanhoTela > 1024) {         
-        console.log(tamanhoArea);
+    if (tamanhoTela > 1024) {                 
         if (tamanhoArea < 290) {
            paragrafoCaracteres.innerText = `Caracteres restantes.: ${tamanhoArea}`;
         } else { 
@@ -67,19 +65,15 @@ function verificaTexto() {
         let escolhido = respostaNumeros ? 'numeros': 'acentos';        
         escolhido = respostaMaiusculas ? 'maiusculas': escolhido;        
         if (respostaCaracteresEspeciais) escolhido = 'caracteres especiais'; 
-        let mensagemRetorno = `Criptografia não realizada, ${escolhido} não aceitos.`; 
+        let mensagemErrorRetorno = `Criptografia não realizada, ${escolhido} não aceitos.`; 
         const element = document.getElementById('paragrafo_erro');
 
-        element.innerHTML=mensagemRetorno;  //muda  a mensagem no paragrafo <p></p>
-        return;        
-
-    } else { 
-       
-        imagemDetetive.style.display='none';
-        textAreaCriptografada.style.display='block';                  
-        
-        return textoDigitado;
-    }    
+        element.innerHTML=mensagemErrorRetorno; 
+        return;
+    }         
+    imagemDetetive.style.display='none';
+    textAreaCriptografada.style.display='block';                          
+    return textoDigitado;       
 }
 
 function criptografar() {
@@ -87,7 +81,7 @@ function criptografar() {
     const textoDigitado = verificaTexto();    
     if (!textoDigitado) {
         offButons();
-        return
+        return;
     } 
 
     onButtons();
@@ -107,7 +101,7 @@ function descriptografa() {
     const textoZonaCriptografada = verificaTexto(); 
     if (!textoZonaCriptografada){
         offButons();
-        return
+        return;
     } 
     
     onButtons();
@@ -126,8 +120,7 @@ function copiar() {
     const textoCriptografado = textAreaCriptografada.value; 
     const textoOriginal = textAreaOriginal.value; 
          
-    if(navigator.clipboard.writeText(textoCriptografado)){
-        
+    if(navigator.clipboard.writeText(textoCriptografado)){        
         
         if (textoCriptografado.length > 1) {
             buttonCopiar.innerText='copiado para área de transferência';
@@ -172,8 +165,8 @@ function alternaImagemTextArea() {
 }
 
 
-function controlaPlaceholder(tamanhoTela) { 
-    if (tamanhoTela < 490) {
+function controlaPlaceholder(parametro) { 
+    if (parametro < 490) {
         textAreaOriginal.setAttribute('placeholder','Digite seu texto');    
     } 
 }

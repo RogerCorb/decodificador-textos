@@ -57,7 +57,7 @@ textarea {
 }
 
 textarea:focus, input:focus, select:focus {
-   outline: 0;
+   outline: 0;   
 }
 
 .apresentacao_criptografia { 
@@ -124,15 +124,12 @@ textarea:focus, input:focus, select:focus {
    color:#00008b;  
 }
 
-
-
 #buttonDescriptogra:disabled,#buttonCopia:disabled{
    background-color: #dddddd;
    color:#00008b;
    border:solid 0.1rem;
    border-color: #00008b;
    cursor:pointer;
-
 }
 
 .apresentacao_descriptografia { 
@@ -154,6 +151,12 @@ textarea:focus, input:focus, select:focus {
 
 #textoCriptografado {
    display:none; /* Inicialmente, a textarea está oculta */
+   width:95%;
+   height: 400px;
+   font-family: "Inter", sans-serif;
+   font-size: 1.3rem;
+   font-weight: 400;
+   color:#495057;   
 }
 
 #imagem_detetive { 
@@ -184,13 +187,13 @@ textarea:focus, input:focus, select:focus {
    text-align: center;
 }
 
+/*************************************************************************
+
 #texto_criptografado{
-   font-family: "Inter", sans-serif;
-   font-size: 1.5rem;
-   font-weight: 400;
-   color:#495057;
-   text-align: center;
+   
 }
+
+*************************************************************************/
 
 #subtitulo_textoinformativo{
    font-family: "Inter", sans-serif;
@@ -361,8 +364,8 @@ textarea:focus, input:focus, select:focus {
    }
    
    .apresentacao_descriptografia_imagemtexto{
-      width:95%;
-      height:80px;
+      width:90%;
+      height:100px;
       position: relative;      
    }
 
