@@ -27,11 +27,14 @@ const tamanhoTela=localStorage.getItem(chaveTela);
 controlaPlaceholder(tamanhoTela); 
 
 textAreaOriginal.addEventListener('input',(event)=>{  
+
+    
         
     if (event.inputType==='deleteContentBackward' || event.inputType==='insertFromPaste') {
             const textAreaOriginal = document.getElementById('textoOriginal').value;
             tamanhoArea=quantidadeCaracteres-textAreaOriginal.length-1; 
-    }    
+    } 
+    
     tamanhoArea > 0 && event.inputType === 'insertText' ?  tamanhoArea-- : tamanhoArea++;     
     if (tamanhoTela > 1024) {                 
         if (tamanhoArea < 290) {
@@ -136,7 +139,7 @@ function copiar() {
             alert('conteudo vazio cópia não realizada');
         }       
     }; 
-    if (tamanhoTela > 1024) {
+    if (tamanhoTela > 1023) {
         paragrafoCaracteres.innerText = `Caracteres restantes.: ${quantidadeCaracteres-textoOriginal.length}`;        
     }      
 
