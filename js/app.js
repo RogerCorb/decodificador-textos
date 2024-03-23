@@ -171,7 +171,9 @@ function alternaImagemTextArea() {
 function controlaPlaceholder(parametro) { 
     if (parametro < 490) {
         textAreaOriginal.setAttribute('placeholder','Digite seu texto');    
-    } 
+    } else { 
+        textAreaOriginal.removeAttribute('placeholder');
+    }
 }
 
 function onButtons() { 
