@@ -30,11 +30,11 @@ textAreaOriginal.addEventListener('input',(event)=>{
 
     
         
-    if (event.inputType==='deleteContentBackward' || event.inputType==='insertFromPaste') {
+    if (event.inputType==='deleteContentBackward' || event.inputType==='insertFromPaste' || event.inputType==='deleteContentForward') {
             const textAreaOriginal = document.getElementById('textoOriginal').value;
             tamanhoArea=quantidadeCaracteres-textAreaOriginal.length-1; 
     } 
-    
+
     tamanhoArea > 0 && event.inputType === 'insertText' ?  tamanhoArea-- : tamanhoArea++;     
     if (tamanhoTela > 1024) {                 
         if (tamanhoArea < 290) {
