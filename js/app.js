@@ -2,6 +2,7 @@ const buttonCopiar = document.getElementById('buttonCopia');
 const buttonDescriptografar = document.getElementById('buttonDescriptogra');
 const textAreaCriptografada = document.getElementById('textoCriptografado');
 const paragrafoCaracteres = document.getElementById('paragrafo_caracteres');
+const paragrafoErro = document.getElementById('paragrafo_erro');
 const imagemDetetive = document.getElementById('imagem_detetive');
 const paragrafoTituloTextoInformativo = document.getElementById('titulo_textoinformativo');
 const paragrafoSsubtituloTextoInformativo = document.getElementById('subtitulo_textoinformativo');
@@ -65,13 +66,10 @@ function verificaTexto() {
     if (textoDigitado.trim()==='') return;
 
     if (respostaNumeros || respostaMaiusculas || respostaAcentos || respostaCaracteresEspeciais) {                
-        let escolhido = respostaNumeros ? 'numeros': 'acentos';        
-        escolhido = respostaMaiusculas ? 'maiusculas': escolhido;        
-        if (respostaCaracteresEspeciais) escolhido = 'caracteres especiais'; 
-        let mensagemErrorRetorno = `Criptografia não realizada, ${escolhido} não aceitos.`; 
-        const element = document.getElementById('paragrafo_erro');
-
-        element.innerHTML=mensagemErrorRetorno; 
+        let descricaoErro = respostaNumeros ? 'numeros': 'acentos';        
+        descricaoErro = respostaMaiusculas ? 'maiusculas': descricaoErro;        
+        if (respostaCaracteresEspeciais) descricaoErro = 'caracteres especiais';                
+        paragrafoErro.innerText=`Criptografia não realizada, ${descricaoErro} não aceitos.`;
         return;
     }         
     imagemDetetive.style.display='none';
